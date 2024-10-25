@@ -6,7 +6,7 @@ import { SearchIcon } from "../../icons";
 export default function Landing() {
   return (
     <div
-      className="h-[calc(100vh-64px)] bg-cover bg-center"
+      className="h-[calc(60vh-64px)] bg-cover bg-center"
       style={{ backgroundImage: `url(${sea.src})` }}
     >
       <div className="pt-32 max-w-xl flex-1 mx-auto">

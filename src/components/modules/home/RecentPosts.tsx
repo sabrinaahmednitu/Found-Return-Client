@@ -3,7 +3,12 @@ import Link from "next/link";
 
 import Container from "../../UI/Container";
 
-export default function RecentPosts() {
+import { getRecentPosts } from "@/src/services/RecentPosts";
+import Card from "../../UI/ItemCard";
+
+export default async function RecentPosts() {
+  const { data: posts } = await getRecentPosts();
+
   return (
     <Container>
       <div className="section-title my-8">
@@ -14,6 +19,9 @@ export default function RecentPosts() {
       </div>
       <div className="my-8 frid justify-center gap-10 sm:grid-cols-1 md:grid-cols-4">
         <h1>Recent Posts</h1>
+        {posts.map((post) => (
+          <Card key={post?._id} post={post}></Card>
+        ))}
       </div>
       <div className="flex justify-center">
         <Button className="rounded-md bg-default-900 text-default">

@@ -34,7 +34,7 @@ export default function ItemCard({ post }) {
             radius="lg"
             size="sm"
           >
-            Details
+            Details about card item
           </Button>
         </CardFooter>
       </Card>

@@ -4,8 +4,8 @@ import RecentPosts from "@/src/components/modules/home/RecentPosts";
 export default function Home() {
   return (
     <section>
-      <Landing></Landing>
-      <RecentPosts></RecentPosts>
+      <Landing />
+      <RecentPosts />
     </section>
   );
 }

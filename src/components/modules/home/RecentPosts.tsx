@@ -17,8 +17,8 @@ export default async function RecentPosts() {
           A list of items that have been recntly found and reported.
         </p>
       </div>
-      <div className="my-8 frid justify-center gap-10 sm:grid-cols-1 md:grid-cols-4">
-        <h1>Recent Posts</h1>
+      <div className="my-8 grid justify-center gap-10 sm:grid-cols-1 md:grid-cols-3">
+        <h1>Recent Posted thing that could be yours</h1>
         {posts.map((post) => (
           <Card key={post?._id} post={post}></Card>
         ))}

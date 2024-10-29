@@ -1,19 +1,24 @@
 "use client";
-
 import { Button } from "@nextui-org/button";
 import Image from "next/image";
 import { format } from "date-fns";
 import { Card, CardHeader, CardFooter } from "@nextui-org/react";
 
-export default function ItemCard({ post }) {
+import { IPost } from "@/src/types";
+
+export default function ItemCard({ post }: { post: IPost }) {
   const { title, category, images, city, dateFound, _id } = post || {};
 
   return (
     <div>
       <Card isFooterBlurred className="h-[400px] w-full">
         <CardHeader className="absolute top-1 z-10 flex-col items-start">
-          <p className="absolute -top-0 right-1 rounded-full bg-white px-3 py-2 text-tiny font-bold">{category?.name}</p>
-          <h4 className="mt-2 rounded bg-black/30 p-2 font-medium text-white">{title}</h4>
+          <p className="absolute -top-0 right-1 rounded-full bg-white px-3 py-2 text-tiny font-bold">
+            {category?.name}
+          </p>
+          <h4 className="mt-2 rounded bg-black/30 p-2 font-medium text-white">
+            {title}
+          </h4>
         </CardHeader>
         <Image
           alt="Woman listing to music"

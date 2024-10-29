@@ -2,9 +2,10 @@ import { Button } from "@nextui-org/button";
 import Link from "next/link";
 
 import Container from "../../UI/Container";
+import Card from "../../UI/ItemCard";
 
 import { getRecentPosts } from "@/src/services/RecentPosts";
-import Card from "../../UI/ItemCard";
+import { IPost } from "@/src/types";
 
 export default async function RecentPosts() {
   const { data: posts } = await getRecentPosts();
@@ -16,11 +17,11 @@ export default async function RecentPosts() {
         <p className="text-center">
           A list of items that have been recntly found and reported.
         </p>
+        <h1>Recent Posted thing that could be yours</h1>
       </div>
       <div className="my-8 grid justify-center gap-10 sm:grid-cols-1 md:grid-cols-3">
-        <h1>Recent Posted thing that could be yours</h1>
-        {posts.map((post) => (
-          <Card key={post?._id} post={post}></Card>
+        {posts.map((post: IPost) => (
+          <Card key={post?._id} post={post} />
         ))}
       </div>
       <div className="flex justify-center">

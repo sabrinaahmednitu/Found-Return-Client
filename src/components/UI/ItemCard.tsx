@@ -12,7 +12,7 @@ export default function ItemCard({ post }) {
     <div>
       <Card isFooterBlurred className="h-[400px] w-full">
         <CardHeader className="absolute top-1 z-10 flex-col items-start">
-          <p className="absolute -top-0 right-1 rounded-full bg-black px-2 text-tiny uppercase font-bold">{category?.name}</p>
+          <p className="absolute -top-0 right-1 rounded-full bg-white px-3 py-2 text-tiny font-bold">{category?.name}</p>
           <h4 className="mt-2 rounded bg-black/30 p-2 font-medium text-white">{title}</h4>
         </CardHeader>
         <Image

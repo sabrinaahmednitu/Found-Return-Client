@@ -50,7 +50,7 @@ export const Navbar = () => {
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
             {/* <Logo /> */}
-            <Image className="w-full h-full" src={logo} alt="Logo" />
+            <Image className="w-[30px] h-[30px] rounded-full mr-2" src={logo} alt="Logo" />
             <p className="font-bold text-inherit">FoundX</p>
           </NextLink>
         </NavbarBrand>

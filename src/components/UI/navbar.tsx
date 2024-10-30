@@ -16,7 +16,11 @@ import clsx from "clsx";
 
 import { siteConfig } from "@/src/config/site";
 import { ThemeSwitch } from "@/src/components/UI/theme-switch";
-import { SearchIcon, Logo } from "@/src/components/icons";
+import { SearchIcon } from "@/src/components/icons";
+
+import Image from "next/image";
+
+import logo from "../../assets/logo.png";
 
 export const Navbar = () => {
   const searchInput = (
@@ -45,8 +49,9 @@ export const Navbar = () => {
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
-            <Logo />
-            <p className="font-bold text-inherit">ACME</p>
+            {/* <Logo /> */}
+            <Image className="w-full h-full" src={logo} alt="Logo" />
+            <p className="font-bold text-inherit">FoundX</p>
           </NextLink>
         </NavbarBrand>
         <ul className="hidden lg:flex gap-4 justify-start ml-2">

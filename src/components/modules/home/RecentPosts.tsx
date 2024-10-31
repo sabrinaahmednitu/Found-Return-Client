@@ -16,7 +16,7 @@ export default async function RecentPosts() {
   return (
     <Container>
       <div className="section-title my-8">
-        <Image className="w-[100px] h-[100px] mx-auto rounded-full" src={logo2} alt="photo"/>
+        <Image className="w-[100px] h-[100px] mx-auto rounded-full mb-2" src={logo2} alt="photo"/>
         <h2 className="mb-2 text-center text-2xl">Recently Found Items</h2>
         <p className="text-center">
           A list of items that have been recntly found and reported.

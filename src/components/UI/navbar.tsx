@@ -20,7 +20,7 @@ import { SearchIcon } from "@/src/components/icons";
 
 import Image from "next/image";
 
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo2.png";
 
 export const Navbar = () => {
   const searchInput = (

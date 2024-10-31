@@ -1,11 +1,14 @@
 import { Button } from "@nextui-org/button";
 import Link from "next/link";
+import Image from "next/image";
 
 import Container from "../../UI/Container";
 import Card from "../../UI/ItemCard";
 
 import { getRecentPosts } from "@/src/services/RecentPosts";
 import { IPost } from "@/src/types";
+import logo2 from '../../../assets/logo2.png'
+
 
 export default async function RecentPosts() {
   const { data: posts } = await getRecentPosts();
@@ -13,7 +16,8 @@ export default async function RecentPosts() {
   return (
     <Container>
       <div className="section-title my-8">
-        <h2 className="mb-2 text-center text-2xl">recently Found Items</h2>
+        <Image className="w-[100px] h-[100px] mx-auto rounded-full" src={logo2} alt="photo"/>
+        <h2 className="mb-2 text-center text-2xl">Recently Found Items</h2>
         <p className="text-center">
           A list of items that have been recntly found and reported.
         </p>

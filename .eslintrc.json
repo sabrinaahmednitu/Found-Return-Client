@@ -6,6 +6,7 @@
     "node": true
   },
   "extends": [
+    "eslint:recommended",
     "plugin:react/recommended",
     "plugin:prettier/recommended",
     "plugin:react-hooks/recommended",
@@ -98,7 +99,8 @@
     "prettier": [
       "error",
       {
-        "endOfLine": "auto"
+        "singleQuote": true,
+        "endOfLine": "lf"
       }
     ]
   }

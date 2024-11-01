@@ -1,7 +1,7 @@
 export default function loading() {
   return (
     <div>
-      <h1>loading</h1>
+      <h1>global loading ... </h1>
     </div>
   );
 }

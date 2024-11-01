@@ -1,7 +1,7 @@
-import { Input } from "@nextui-org/input";
+import { Input } from '@nextui-org/input';
 
-import sea from "../../../assets/sea.jpg";
-import { SearchIcon } from "../../icons";
+import sea from '../../../assets/sea.jpg';
+import { SearchIcon } from '../../icons';
 
 export default function Landing() {
   return (
@@ -14,8 +14,8 @@ export default function Landing() {
           <Input
             aria-label="Search"
             classNames={{
-              inputWrapper: "bg-default-100",
-              input: "text-sm",
+              inputWrapper: 'bg-default-100',
+              input: 'text-sm',
             }}
             placeholder="Search..."
             size="lg"

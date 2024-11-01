@@ -1,10 +1,10 @@
-"use client";
-import { Button } from "@nextui-org/button";
-import Image from "next/image";
-import { format } from "date-fns";
-import { Card, CardHeader, CardFooter } from "@nextui-org/react";
+'use client';
+import { Button } from '@nextui-org/button';
+import Image from 'next/image';
+import { format } from 'date-fns';
+import { Card, CardHeader, CardFooter } from '@nextui-org/react';
 
-import { IPost } from "@/src/types";
+import { IPost } from '@/src/types';
 
 export default function ItemCard({ post }: { post: IPost }) {
   const { title, category, images, city, dateFound, _id } = post || {};
@@ -30,14 +30,14 @@ export default function ItemCard({ post }: { post: IPost }) {
         <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
           <p className="text-tiny text-white/80">{city}</p>
           <p className="text-tiny text-white/80">
-            {format(new Date(dateFound), "dd MMMM, yyyy")}
+            {format(new Date(dateFound), 'dd MMMM, yyyy')}
           </p>
           <Button
             className="text-tiny text-white bg-black/20"
-            variant="flat"
             color="default"
             radius="lg"
             size="sm"
+            variant="flat"
           >
             Details
           </Button>

@@ -10,7 +10,6 @@ export default function layout({
   return (
     <>
       {children}
-      <h1>are you from here</h1>
       {recentPosts}
     </>
   );

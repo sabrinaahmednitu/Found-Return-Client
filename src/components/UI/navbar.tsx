@@ -20,9 +20,7 @@ import logo from '../../assets/logo2.png';
 import { siteConfig } from '@/src/config/site';
 import { ThemeSwitch } from '@/src/components/UI/theme-switch';
 import { SearchIcon } from '@/src/components/icons';
-import { Avatar } from '@nextui-org/avatar';
 import NavbarDropdown from './NavbarDropdown';
-
 
 export const Navbar = () => {
   const searchInput = (
@@ -86,10 +84,9 @@ export const Navbar = () => {
           <ThemeSwitch />
         </NavbarItem>
         <NavbarItem className="hidden sm:flex gap-2">
-        
-          {/* <NavbarDropdown /> */}
+          <NavbarDropdown />
         </NavbarItem>
-        <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
+        {/* <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem> */}
       </NavbarContent>
 
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">

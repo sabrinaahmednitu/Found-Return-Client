@@ -18,10 +18,10 @@ export default function NavbarDropdown() {
 
   return (
     <Dropdown>
-      <DropdownTrigger onClick={() => console.log('Dropdown clicked!')}>
+      <DropdownTrigger>
         <Avatar className="cursor-pointer" name="joe" />
       </DropdownTrigger>
-      <DropdownMenu aria-label="Static Actions">
+      <DropdownMenu >
         <DropdownItem key="0" onClick={() => handleNavigation('/profile')}>
           profile
         </DropdownItem>

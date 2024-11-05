@@ -1,6 +1,6 @@
 'use client';
 
-import { Avatar } from '@nextui-org/avatar';
+import { Avatar } from '@nextui-org/react';
 import {
   Dropdown,
   DropdownTrigger,
@@ -8,6 +8,9 @@ import {
   DropdownItem,
 } from '@nextui-org/react';
 import { useRouter } from 'next/navigation';
+
+
+
 
 export default function NavbarDropdown() {
   const router = useRouter();
@@ -19,25 +22,28 @@ export default function NavbarDropdown() {
   return (
     <Dropdown>
       <DropdownTrigger>
-        <Avatar className="cursor-pointer" name="joe" />
+        <Avatar className="cursor-pointer" name="Joe" />
       </DropdownTrigger>
-      <DropdownMenu >
-        <DropdownItem key="0" onClick={() => handleNavigation('/profile')}>
-          profile
+      <DropdownMenu aria-label="User menu actions" color="primary">
+        <DropdownItem
+          key="profile"
+          onClick={() => handleNavigation('/profile')}
+        >
+          Profile
         </DropdownItem>
         <DropdownItem
-          key="1"
+          key="create-post"
           onClick={() => handleNavigation('/profile/create-post')}
         >
           Create Post
         </DropdownItem>
         <DropdownItem
-          key="2"
+          key="settings"
           onClick={() => handleNavigation('/profile/settings')}
         >
-          settings
+          Settings
         </DropdownItem>
-        <DropdownItem key="3" className="text-danger" color="danger">
+        <DropdownItem key="logout" color="danger">
           Logout
         </DropdownItem>
       </DropdownMenu>

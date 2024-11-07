@@ -84,7 +84,7 @@ export const Navbar = () => {
           <ThemeSwitch />
         </NavbarItem>
         <NavbarItem className="hidden sm:flex gap-2">
-          <NavbarDropdown />
+          {/* <NavbarDropdown /> */}
         </NavbarItem>
         {/* <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem> */}
       </NavbarContent>

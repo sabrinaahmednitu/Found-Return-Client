@@ -4,6 +4,8 @@ import {
   FaSearch,
   FaRecycle,
   FaUsers,
+  FaShieldAlt,
+  FaChartLine,
 } from 'react-icons/fa';
 
 export default function Purpose() {
@@ -66,16 +68,29 @@ export default function Purpose() {
                 integrity.
               </p>
             </div>
-          </div>
+            {/* New Card 5 */}
+            <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+              <FaShieldAlt className="text-red-600 text-4xl mb-4 mx-auto" />
+              <h3 className="text-xl font-semibold text-gray-800">
+                Safe & Secure
+              </h3>
+              <p className="text-gray-600 mt-2">
+                Ensuring a safe platform for users to connect and reclaim their
+                lost items securely.
+              </p>
+            </div>
 
-          {/* Call-to-Action Button */}
-          <div className="mt-12">
-            <a
-              href="/post-item"
-              className="bg-blue-600 text-white py-3 px-6 rounded-lg shadow hover:bg-blue-700 transition-colors"
-            >
-              Post a Lost/Found Item
-            </a>
+            {/* New Card 6 */}
+            <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+              <FaChartLine className="text-indigo-600 text-4xl mb-4 mx-auto" />
+              <h3 className="text-xl font-semibold text-gray-800">
+                Continuous Improvement
+              </h3>
+              <p className="text-gray-600 mt-2">
+                We are committed to enhancing our platform to serve our users
+                better every day.
+              </p>
+            </div>
           </div>
         </div>
       </section>

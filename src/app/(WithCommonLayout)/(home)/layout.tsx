@@ -11,7 +11,6 @@ export default function layout({
     <>
       {children}
       {recentPosts}
-      
     </>
   );
 }

@@ -46,7 +46,7 @@ export default function Purpose() {
             </div>
 
             {/* Card 3 */}
-            {/* <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+            <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
               <FaRecycle className="text-yellow-600 text-4xl mb-4 mx-auto" />
               <h3 className="text-xl font-semibold text-gray-800">
                 Sustainability
@@ -55,7 +55,7 @@ export default function Purpose() {
                 Encourage recycling and reduce waste by returning lost
                 belongings.
               </p>
-            </div> */}
+            </div>
 
             {/* Card 4 */}
             <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">

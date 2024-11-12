@@ -8,7 +8,7 @@ import {
   DropdownItem,
 } from '@nextui-org/react';
 import { useRouter } from 'next/navigation';
-import React, { useState } from 'react';
+import React from 'react';
 
 
 
@@ -21,15 +21,15 @@ export default function NavbarDropdown() {
   };
 
 
-   const [isOpen, setIsOpen] = useState(false);
+  //  const [isOpen, setIsOpen] = useState(false);
 
-   const toggleDropdown = () => {
-     setIsOpen(!isOpen);
-   };
+  //  const toggleDropdown = () => {
+  //    setIsOpen(!isOpen);
+  //  };
 
-   const closeDropdown = () => {
-     setIsOpen(false);
-   };
+  //  const closeDropdown = () => {
+  //    setIsOpen(false);
+  //  };
 
   return (
     // <div className="w-full py-6 pb-8">
@@ -96,33 +96,33 @@ export default function NavbarDropdown() {
     //     )}
     //   </div>
     // </div>
-    // <Dropdown>
-    //   <DropdownTrigger>
-    //     <Avatar className="cursor-pointer" name="Joe" />
-    //   </DropdownTrigger>
-    //   <DropdownMenu aria-label="User menu actions" color="primary">
-    //     <DropdownItem
-    //       key="profile"
-    //       onClick={() => handleNavigation('/profile')}
-    //     >
-    //       Profile
-    //     </DropdownItem>
-    //     <DropdownItem
-    //       key="create-post"
-    //       onClick={() => handleNavigation('/profile/create-post')}
-    //     >
-    //       Create Post
-    //     </DropdownItem>
-    //     <DropdownItem
-    //       key="settings"
-    //       onClick={() => handleNavigation('/profile/settings')}
-    //     >
-    //       Settings
-    //     </DropdownItem>
-    //     <DropdownItem key="logout" color="danger">
-    //       Logout
-    //     </DropdownItem>
-    //   </DropdownMenu>
-    // </Dropdown>
+    <Dropdown>
+      <DropdownTrigger>
+        <Avatar className="cursor-pointer" name="Joe" />
+      </DropdownTrigger>
+      <DropdownMenu aria-label="User menu actions" color="primary">
+        <DropdownItem
+          key="profile"
+          onClick={() => handleNavigation('/profile')}
+        >
+          Profile
+        </DropdownItem>
+        <DropdownItem
+          key="create-post"
+          onClick={() => handleNavigation('/profile/create-post')}
+        >
+          Create Post
+        </DropdownItem>
+        <DropdownItem
+          key="settings"
+          onClick={() => handleNavigation('/profile/settings')}
+        >
+          Settings
+        </DropdownItem>
+        <DropdownItem key="logout" color="danger">
+          Logout
+        </DropdownItem>
+      </DropdownMenu>
+    </Dropdown>
   );
 }

@@ -1,11 +1,11 @@
-import FXForm from "@/src/components/form/FXForm";
-import { Button } from "@nextui-org/button";
-import { Input } from "@nextui-org/input";
-import { useFormContext } from "react-hook-form";
+import FXForm from '@/src/components/form/FXForm';
+import FXInput from '@/src/components/form/FXInput';
+import { Button } from '@nextui-org/button';
+import Link from 'next/link';
 
 export default function LoginPage() {
-  const { } = useFormContext();
-  const onSubmit = (data) => {
+
+  const onSubmit = (data:any) => {
     console.log(data);
   };
   return (
@@ -16,15 +16,22 @@ export default function LoginPage() {
         <div className="w-[35%]">
           <FXForm onSubmit={onSubmit}>
             <div className="py-3">
-              <Input type="text" />
+              <FXInput name="email" label="Email" type="email" />
             </div>
             <div className="py-3">
-              <Input type="text" />
+              <FXInput name="password" label="Password" type="password" />
             </div>
-            <Button>
-
+            <Button
+              className="my-3 w-full rounded-md bg-default-900 font-semibold text-default-200"
+              size="lg"
+              type="submit"
+            >
+              Login
             </Button>
           </FXForm>
+          <div className="text-center">
+            Don't have account ?<Link href={'/register'}>Register</Link>
+          </div>
         </div>
       </div>
     </div>

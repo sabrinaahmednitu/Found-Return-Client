@@ -19,11 +19,16 @@ export default function FXInput({
   label,
   name,
 }: IProps) {
-  const { register } = useFormContext();
-
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext();
+  //   console.log(errors);
   return (
     <Input
       {...register(name)}
+      errorMessage={errors[name] ? (errors[name].message as string) : ''}
+      isInvalid={!!errors[name]}
       variant={variant}
       size={size}
       required={required}

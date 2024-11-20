@@ -1,7 +1,7 @@
 'use client'
 import FXForm from '@/src/components/form/FXForm';
 import FXInput from '@/src/components/form/FXInput';
-import loginValidationSchema from '@/src/schemas/login.schema';
+import registerValidationSchema from '@/src/schemas/register.schema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Button } from '@nextui-org/button';
 import Link from 'next/link';
@@ -18,11 +18,17 @@ export default function RegisterPage() {
           <p className="mb-4">Welcome ! Let's Started</p>
           <div className="w-[35%]">
             <FXForm
+              defaultValues={{
+                name: 'Nitu',
+                email: 'nitu@gmail.com',
+                mobile: '6734565878',
+                password:'123456'
+              }}
               onSubmit={onSubmit}
-              resolver={zodResolver(loginValidationSchema)}
+              resolver={zodResolver(registerValidationSchema)}
             >
               <div className="py-3">
-                <FXInput name="name" label="Name" type="name" />
+                <FXInput name="name" label="Name" type="name" size='sm' />
               </div>
               <div className="py-3">
                 <FXInput name="email" label="Email" type="email" />

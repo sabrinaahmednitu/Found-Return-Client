@@ -20,7 +20,7 @@ export default function RegisterPage() {
             <FXForm
               defaultValues={{
                 name: 'Nitu',
-                email: 'nitu@gmail.com',
+                email: 'nitumoni@gmail.com',
                 mobile: '6734565878',
                 password:'123456'
               }}
@@ -29,6 +29,9 @@ export default function RegisterPage() {
             >
               <div className="py-3">
                 <FXInput name="name" label="Name" type="name" size='sm' />
+              </div>
+              <div className="py-3">
+                <FXInput name="lastname" label="Last Name" type="lastname" size='sm' />
               </div>
               <div className="py-3">
                 <FXInput name="email" label="Email" type="email" />

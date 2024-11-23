@@ -8,7 +8,11 @@ import Link from 'next/link';
 import { FieldValues, SubmitHandler } from 'react-hook-form';
 export default function RegisterPage() {
     const onSubmit: SubmitHandler<FieldValues> = (data) => {
-      console.log(data);
+      const userData = {
+        ...data,
+        profilePhoto:"",
+
+      }
     };
   return (
     <div>

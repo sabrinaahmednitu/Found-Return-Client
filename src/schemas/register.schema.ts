@@ -7,7 +7,7 @@ const registerValidationSchema = z.object({
     .string()
     .trim()
         .min(6, 'Password needs to be at least 6 character'),
-    mobile: z.number(),
+    mobileNumber: z.string(),
 });
 
 export default registerValidationSchema;

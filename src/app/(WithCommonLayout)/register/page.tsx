@@ -28,23 +28,24 @@ export default function RegisterPage() {
               defaultValues={{
                 name: 'Nitu',
                 email: 'nitumoni@gmail.com',
-                mobile: '6734565878',
-                password:'123456'
+                mobileNumber:'01767345658',
+                password: '123456',
               }}
               onSubmit={onSubmit}
               resolver={zodResolver(registerValidationSchema)}
             >
               <div className="py-3">
-                <FXInput name="name" label="Name" type="name" size='sm' />
-              </div>
-              <div className="py-3">
-                <FXInput name="lastname" label="Last Name" type="lastname" size='sm' />
+                <FXInput name="name" label="Name" type="name" size="sm" />
               </div>
               <div className="py-3">
                 <FXInput name="email" label="Email" type="email" />
               </div>
               <div className="py-3">
-                <FXInput name="mobile" label="Mobile Number" type="number" />
+                <FXInput
+                  name="mobileNumber"
+                  label="Mobile Number"
+                  type="number"
+                />
               </div>
               <div className="py-3">
                 <FXInput name="password" label="Password" type="password" />

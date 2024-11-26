@@ -11,8 +11,9 @@ import Link from 'next/link';
 import { useEffect } from 'react';
 import { FieldValues, SubmitHandler } from 'react-hook-form';
 export default function RegisterPage() {
+
+
   const { mutate: handleUserRegistration, isPending } = useUserRegistration();
- 
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     const userData = {
@@ -23,6 +24,12 @@ export default function RegisterPage() {
     console.log('inside from user data', userData);
     handleUserRegistration(userData);
   };
+
+
+  if (isPending) {
+    //handle loading state
+  }
+  
   return (
     <div>
       <div>

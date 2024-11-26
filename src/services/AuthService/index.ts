@@ -11,6 +11,7 @@ export const registerUser = async (userData: FieldValues) => {
       (await cookies()).set('accessToken', data?.data?.accessToken);
       (await cookies()).set('refreshToken', data?.data?.refreshToken);
     }
+    return data;
     //  const res = await axiosInstance.post('/auth/register', userData);
     //  console.log(res.data)
   } catch (error: any) {

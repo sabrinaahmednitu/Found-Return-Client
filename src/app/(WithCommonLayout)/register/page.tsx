@@ -1,22 +1,40 @@
-'use client'
+'use client';
 import FXForm from '@/src/components/form/FXForm';
 import FXInput from '@/src/components/form/FXInput';
 import registerValidationSchema from '@/src/schemas/register.schema';
 import { registerUser } from '@/src/services/AuthService';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Button } from '@nextui-org/button';
+import { useMutation } from '@tanstack/react-query';
 import Link from 'next/link';
 import { FieldValues, SubmitHandler } from 'react-hook-form';
 export default function RegisterPage() {
-    const onSubmit: SubmitHandler<FieldValues> = (data) => {
-      const userData = {
-        ...data,
-        profilePhoto:
-          'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png',
-      };
-      console.log("inside from user data",userData)
-      registerUser(userData)
+  // tanstack mutation
+  const {
+    mutate: handleUserRegistration,
+    isPending,
+    data,
+    isError,
+    isSuccess,
+  } = useMutation({
+    mutationKey: ['USER_REGISTRATION'],
+    mutationFn: async (userData) => await registerUser(userData),
+    onSuccess: () => {
+      console.log("User creation successful");
+    },
+  });
+
+  // console.log({ isPending, data, isSuccess });
+
+  const onSubmit: SubmitHandler<FieldValues> = (data) => {
+    const userData = {
+      ...data,
+      profilePhoto:
+        'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png',
     };
+    console.log('inside from user data', userData);
+    handleUserRegistration(userData);
+  };
   return (
     <div>
       <div>
@@ -28,7 +46,7 @@ export default function RegisterPage() {
               defaultValues={{
                 name: 'Nitu',
                 email: 'nitumoni@gmail.com',
-                mobileNumber:'01767345658',
+                mobileNumber: '01767345658',
                 password: '123456',
               }}
               onSubmit={onSubmit}

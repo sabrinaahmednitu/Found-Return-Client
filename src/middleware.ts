@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
+import { getCurrentUser } from './services/AuthService';
 
 const AuthRoutes = ['/login', '/register'];  
 
@@ -11,14 +12,17 @@ const roleBasedRoutes = {
 };
 
 // This function can be marked `async` if using `await` inside
-export function middleware(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
+
+  const userToken = await getCurrentUser();
+  console.log(userToken);
   // const user = {
   //   name: 'mir',
   //   token: 'asf efd',
   //   role: 'ADMIN',
   // };
-  const user = undefined;
+   const user = undefined;
   // user based authentication
   if (!user) {
     if (AuthRoutes.includes(pathname)) {

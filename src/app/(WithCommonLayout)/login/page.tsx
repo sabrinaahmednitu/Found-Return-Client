@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { FieldValues, SubmitHandler } from 'react-hook-form';
 import { useUserLogin } from '@/src/hooks/auth.hook';
-import Loading from '@/src/components/UI/loading';
+import Loading from '@/src/components/UI/Loading';
 export default function LoginPage() {
   const { mutate: handleUserLogin, isPending } = useUserLogin();
   const onSubmit: SubmitHandler<FieldValues> = (data) => {

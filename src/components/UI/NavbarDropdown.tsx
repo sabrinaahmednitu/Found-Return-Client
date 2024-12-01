@@ -3,6 +3,7 @@
 import { Avatar } from '@nextui-org/react';
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { logout } from '@/src/services/AuthService';
 
 export default function NavbarDropdown() {
   const router = useRouter();
@@ -15,8 +16,7 @@ export default function NavbarDropdown() {
   };
 
   const handleLogout = () => {
-    // Call your logout function
-    console.log('Logging out...');
+    logout();
     setIsOpen(false); // Close the dropdown after logout
   };
 

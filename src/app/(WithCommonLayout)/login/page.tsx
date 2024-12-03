@@ -11,12 +11,13 @@ import Loading from '@/src/components/UI/Loading';
 import { useRouter, useSearchParams } from 'next/navigation';
 
 export default function LoginPage() {
-  const router = useRouter(); //came from navigation
+  const router = useRouter(); //came from navigation otherwise error happen
   const searchParams = useSearchParams();
   const redirect = searchParams.get('redirect');
 
   const { mutate: handleUserLogin, isPending, isSuccess } = useUserLogin();
   // console.log(redirect);
+
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     handleUserLogin(data);
   };
@@ -33,7 +34,7 @@ export default function LoginPage() {
       <div>
         <div className="flex h-[calc(100vh-200px)] w-full flex-col items-center justify-center">
           <h3 className="my-2 text-2xl font-bold">Login with FoundX</h3>
-          <p className="mb-4">Welcome Back ! Let's Started</p>
+          <p className="mb-4">Welcome Back ! Let's Start</p>
           <div className="w-[35%]">
             <FXForm
               onSubmit={onSubmit}
@@ -54,7 +55,7 @@ export default function LoginPage() {
               </Button>
             </FXForm>
             <div className="text-center">
-              Don't have account ?<Link href={'/register'}>Register</Link>
+              Don't have an account ?<Link href={'/register'}>Register</Link>
             </div>
           </div>
         </div>

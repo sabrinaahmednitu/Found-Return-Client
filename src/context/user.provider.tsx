@@ -1,21 +1,32 @@
-import { createContext, Dispatch, SetStateAction, useState } from 'react';
+import { createContext, Dispatch, ReactNode, SetStateAction, useEffect, useState } from 'react';
+import { IUser } from '../types';
+import { getCurrentUser } from '../services/AuthService';
 
-const UserContext = createContext(undefined); //from react
-interface IUserProviderValues{
-    user: IUser | null;
-    loading: boolean;
-    setUser: (user: IUser | null) => void;
-    setIsLoading:Dispatch<SetStateAction<undefined>>
+const UserContext = createContext<IUserProviderValues | undefined>(undefined); //from react
+interface IUserProviderValues {
+  user: IUser | null;
+  isLoading: boolean;
+  setUser: (user: IUser | null) => void;
+  setIsLoading: Dispatch<SetStateAction<boolean>>;
 }
-const UserProvider = () => {
-    const [user, setUser] = useState();
-    const [isLoading, setIsLoading] = useState();
+const UserProvider = ({children}:{children:ReactNode}) => {
+  const [user, setUser] = useState<IUser | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
+  const handleUser = async () => {
+    const newUser = await getCurrentUser();
+    setUser(newUser);
+  }
 
-    return (
-      <UserContext.Provider
-        value={{ user, setUser, isLoading, setIsLoading }}
-      ></UserContext.Provider>
-    );
+  useEffect(() => {
+    handleUser();
+    setIsLoading(false);
+  },[])
+
+  return (
+    <UserContext.Provider value={{ user, setUser, isLoading, setIsLoading }}>
+      {children}
+    </UserContext.Provider>
+  );
 };
 export default UserProvider;

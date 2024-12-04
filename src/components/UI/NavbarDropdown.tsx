@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import { logout } from '@/src/services/AuthService';
 
 export default function NavbarDropdown() {
+  
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
 

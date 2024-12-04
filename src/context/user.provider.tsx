@@ -1,4 +1,5 @@
-import { createContext, Dispatch, ReactNode, SetStateAction, useEffect, useState } from 'react';
+
+import { createContext, Dispatch, ReactNode, SetStateAction, useContext, useEffect, useState } from 'react';
 import { IUser } from '../types';
 import { getCurrentUser } from '../services/AuthService';
 
@@ -11,7 +12,7 @@ interface IUserProviderValues {
 }
 const UserProvider = ({children}:{children:ReactNode}) => {
   const [user, setUser] = useState<IUser | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleUser = async () => {
     const newUser = await getCurrentUser();
@@ -29,4 +30,16 @@ const UserProvider = ({children}:{children:ReactNode}) => {
     </UserContext.Provider>
   );
 };
+
+//user hook
+export const useUser = () => {
+  const context = useContext(UserContext);
+  if (context === undefined) {
+    throw new Error("useUser must be used within the UseProvider context")
+  }
+  return context;
+}
+
+
+
 export default UserProvider;

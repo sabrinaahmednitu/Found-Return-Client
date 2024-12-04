@@ -9,8 +9,11 @@ import { FieldValues, SubmitHandler } from 'react-hook-form';
 import { useUserLogin } from '@/src/hooks/auth.hook';
 import Loading from '@/src/components/UI/Loading';
 import { useRouter, useSearchParams } from 'next/navigation';
+import { useUser } from '@/src/context/user.provider';
 
 export default function LoginPage() {
+
+ const { setIsLoading: userLoading } = useUser();
   const router = useRouter(); //came from navigation otherwise error happen
   const searchParams = useSearchParams();
   const redirect = searchParams.get('redirect');
@@ -18,8 +21,11 @@ export default function LoginPage() {
   const { mutate: handleUserLogin, isPending, isSuccess } = useUserLogin();
   // console.log(redirect);
 
+ 
+
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     handleUserLogin(data);
+    userLoading(true);
   };
   if (!isPending && isSuccess) {
     if (redirect) {

@@ -8,7 +8,7 @@ import { useUser } from '@/src/context/user.provider';
 
 export default function NavbarDropdown() {
   const router = useRouter();
-  const { setIsLoading: userLoading } = useUser();
+  const { user , setIsLoading: userLoading } = useUser();
   const [isOpen, setIsOpen] = useState(false);
 
   const handleNavigation = (pathname: string) => {
@@ -27,7 +27,7 @@ export default function NavbarDropdown() {
     <div className="relative inline-block text-left">
       {/* Trigger */}
       <div onClick={() => setIsOpen(!isOpen)} className="cursor-pointer">
-        <Avatar name="Joe" />
+        <Avatar src={user?.profilePhoto} />
       </div>
 
       {/* Dropdown Menu */}

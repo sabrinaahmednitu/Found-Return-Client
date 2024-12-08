@@ -4,10 +4,11 @@ import { Avatar } from '@nextui-org/react';
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { logout } from '@/src/services/AuthService';
+import { useUser } from '@/src/context/user.provider';
 
 export default function NavbarDropdown() {
-  
   const router = useRouter();
+  const { setIsLoading: userLoading } = useUser();
   const [isOpen, setIsOpen] = useState(false);
 
   const handleNavigation = (pathname: string) => {
@@ -19,6 +20,7 @@ export default function NavbarDropdown() {
   const handleLogout = () => {
     logout();
     setIsOpen(false); // Close the dropdown after logout
+    userLoading(true);
   };
 
   return (

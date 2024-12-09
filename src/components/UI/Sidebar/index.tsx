@@ -1,9 +1,12 @@
+'use client';
 import { Button } from '@nextui-org/button';
 import Link from 'next/link';
 import SidebarOptions from './SidebarOptions';
-import { userLinks } from './constants';
+import { adminLinks, userLinks } from './constants';
+import { useUser } from '@/src/context/user.provider';
 
-export default function Sidebar() {
+const Sidebar = () => {
+  const { user } = useUser();
   return (
     <div>
       <div className="rounded-xl bg-default-100 p-2">
@@ -18,11 +21,17 @@ export default function Sidebar() {
           as={Link}
           className="mt-2 w-full rounded-md"
           href={'/profile/create-post'}
-        >Create a Post</Button>
+        >
+          Create a Post
+        </Button>
       </div>
       <div className="mt-3 space-y-2 rounded-xl bg-default-100 p-2">
-        <SidebarOptions links={userLinks} />
+        <SidebarOptions
+          links={user?.role === 'USER' ? userLinks : adminLinks}
+        />
       </div>
     </div>
   );
-}
+};
+
+export default Sidebar;

@@ -17,7 +17,7 @@ export default function page() {
     console.log(data);
   };
   const handleFieldAppend = () => {
-    append({ name: 'question' });
+    append({ name: 'questions' });
   };
   return (
     <div>
@@ -30,8 +30,10 @@ export default function page() {
             <h1 className="text-xl">Owner verifications question</h1>
             <Button onClick={() => handleFieldAppend()}>Append</Button>
           </div>
-          {fields.map((field) => (
-            <FXInput name="Que" label="Question"></FXInput>
+          {fields.map((field,index) => (
+            <div key={field.id}>
+              <FXInput name={`questions.${index}.value`} label="Question"></FXInput>
+            </div>
           ))}
           <Divider className="my-5" />
           <Button type="submit" className="mt-3">

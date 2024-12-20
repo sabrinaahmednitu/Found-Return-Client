@@ -14,7 +14,11 @@ export default function page() {
   });
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
-    console.log(data);
+    const postData = {
+      ...data,
+      questions: data.questions.map((que:{value:string}) => que.value),
+    };
+    console.log(postData);
   };
   const handleFieldAppend = () => {
     append({ name: 'questions' });
@@ -30,10 +34,13 @@ export default function page() {
             <h1 className="text-xl">Owner verifications question</h1>
             <Button onClick={() => handleFieldAppend()}>Append</Button>
           </div>
-          {fields.map((field,index) => (
-            <div key={field.id} className='flex items-center'>
-              <FXInput name={`questions.${index}.value`} label="Question"></FXInput>
-           <Button onClick={()=>remove(index)}>Remove</Button>
+          {fields.map((field, index) => (
+            <div key={field.id} className="flex items-center">
+              <FXInput
+                name={`questions.${index}.value`}
+                label="Question"
+              ></FXInput>
+              <Button onClick={() => remove(index)}>Remove</Button>
             </div>
           ))}
           <Divider className="my-5" />

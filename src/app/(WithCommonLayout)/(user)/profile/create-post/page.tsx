@@ -31,8 +31,9 @@ export default function page() {
             <Button onClick={() => handleFieldAppend()}>Append</Button>
           </div>
           {fields.map((field,index) => (
-            <div key={field.id}>
+            <div key={field.id} className='flex items-center'>
               <FXInput name={`questions.${index}.value`} label="Question"></FXInput>
+           <Button onClick={()=>remove()}>Remove</Button>
             </div>
           ))}
           <Divider className="my-5" />

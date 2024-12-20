@@ -33,7 +33,7 @@ export default function page() {
           {fields.map((field,index) => (
             <div key={field.id} className='flex items-center'>
               <FXInput name={`questions.${index}.value`} label="Question"></FXInput>
-           <Button onClick={()=>remove()}>Remove</Button>
+           <Button onClick={()=>remove(index)}>Remove</Button>
             </div>
           ))}
           <Divider className="my-5" />

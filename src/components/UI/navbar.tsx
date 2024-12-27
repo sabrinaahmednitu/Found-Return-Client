@@ -23,6 +23,7 @@ import { ThemeSwitch } from '@/src/components/UI/theme-switch';
 import { SearchIcon } from '@/src/components/icons';
 import NavbarDropdown from './NavbarDropdown';
 import { useUser } from '@/src/context/user.provider';
+import { Button } from '@nextui-org/button';
 
 
 export const Navbar = () => {
@@ -93,7 +94,7 @@ export const Navbar = () => {
           </NavbarItem>
         ) : (
           <NavbarItem>
-            <Link href="/login">Login</Link>
+            <Button href="/login">Login</Button>
           </NavbarItem>
         )}
 

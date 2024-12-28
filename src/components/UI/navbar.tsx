@@ -94,7 +94,9 @@ export const Navbar = () => {
           </NavbarItem>
         ) : (
           <NavbarItem>
-            <Button href="/login">Login</Button>
+            <Link href="/login">
+              <Button>Login</Button>
+            </Link>
           </NavbarItem>
         )}
 

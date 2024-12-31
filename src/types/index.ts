@@ -46,3 +46,10 @@ export interface IUser {
   __v?: number;
 }
 
+export interface IInput {
+  variant?: 'flat' | 'bordered' | 'faded' | 'underlined';
+  required?: boolean;
+  type?: string;
+  label?: string;
+  name?: string;
+}

@@ -1,11 +1,11 @@
 import { DatePicker } from '@nextui-org/react';
-
-export default function FXDatePicker({ label ,name }:IProps) {
- 
-  const { register,
+import IProps from '../../components/form/FXInput'
+export default function FXDatePicker({ label, name }: IProps) {
+  const {
+    register,
     formState: { errors },
   } = useFormContext();
- 
+
   return (
     <div>
       <h1>datepicker added</h1>

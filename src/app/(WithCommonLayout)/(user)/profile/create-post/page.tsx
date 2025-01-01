@@ -1,4 +1,5 @@
 'use client';
+import FXDatePicker from '@/src/components/form/FXDatePicker';
 import FXInput from '@/src/components/form/FXInput';
 import { Button } from '@nextui-org/button';
 import { Divider } from '@nextui-org/react';
@@ -16,7 +17,7 @@ export default function CreatePost() {
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     const postData = {
       ...data,
-      questions: data.questions.map((que:{value:string}) => que.value),
+      questions: data.questions.map((que: { value: string }) => que.value),
     };
     console.log(postData);
   };
@@ -25,30 +26,58 @@ export default function CreatePost() {
   };
   return (
     <div>
-      {/* making form context using FormProvider */}
-      <FormProvider {...methods}>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <FXInput name="title" label="Title"></FXInput>
-          <Divider className="my-5" />
-          <div className="flex justify-between items-center">
-            <h1 className="text-xl">Owner verifications question</h1>
-            <Button onClick={() => handleFieldAppend()}>Append</Button>
-          </div>
-          {fields.map((field, index) => (
-            <div key={field.id} className="flex items-center">
-              <FXInput
-                name={`questions.${index}.value`}
-                label="Question"
-              ></FXInput>
-              <Button onClick={() => remove(index)}>Remove</Button>
+      <div className="h-full rounded-xl bg-gradient-to-b from-default-100 ppx-[73px] py-12">
+        <h1 className="text-2xl font-semibold">Post a found item</h1>
+        <Divider className="mb-5 mt-3" />
+        {/* making form context using FormProvider */}
+        <FormProvider {...methods}>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <div className="flex flex-wrap gap-2 py-2">
+              <div className="min-w-fit flex-1">
+                <FXInput name="title" label="Title"></FXInput>
+              </div>
+              <div className="min-w-fit flex-1">
+                <FXDatePicker label="Found date" name="dateFound" />
+              </div>
             </div>
-          ))}
-          <Divider className="my-5" />
-          <Button type="submit" className="mt-3">
-            Post
-          </Button>
-        </form>
-      </FormProvider>
+            <div className="flex flex-wrap gap-2 py-2">
+              <div className="min-w-fit flex-1">
+                <FXInput name="location" label="Location"></FXInput>
+              </div>
+              <div className="min-w-fit flex-1">
+                <FXInput label="city" name="City" />
+              </div>
+            </div>
+            <div className="flex flex-wrap gap-2 py-2">
+              <div className="min-w-fit flex-1">
+                <FXInput name="category" label="Category"></FXInput>
+              </div>
+              <div className="min-w-fit flex-1">
+                <FXInput label="Upload Image" name="upload-image" />
+              </div>
+            </div>
+
+            <Divider className="my-5" />
+            <div className="flex justify-between items-center">
+              <h1 className="text-xl">Owner verifications question</h1>
+              <Button onClick={() => handleFieldAppend()}>Append</Button>
+            </div>
+            {fields.map((field, index) => (
+              <div key={field.id} className="flex items-center">
+                <FXInput
+                  name={`questions.${index}.value`}
+                  label="Question"
+                ></FXInput>
+                <Button onClick={() => remove(index)}>Remove</Button>
+              </div>
+            ))}
+            <Divider className="my-5" />
+            <Button type="submit" className="mt-3">
+              Post
+            </Button>
+          </form>
+        </FormProvider>
+      </div>
     </div>
   );
 }

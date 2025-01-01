@@ -5,7 +5,7 @@ import { Divider } from '@nextui-org/react';
 import { useFieldArray, useForm, FormProvider } from 'react-hook-form';
 import { SubmitHandler, FieldValues } from 'react-hook-form';
 
-export default function page() {
+export default function CreatePost() {
   const methods = useForm();
   const { control, handleSubmit } = methods;
   const { fields, append, remove } = useFieldArray({

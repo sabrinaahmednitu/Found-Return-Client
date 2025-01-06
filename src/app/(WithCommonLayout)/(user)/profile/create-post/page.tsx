@@ -45,6 +45,9 @@ export default function CreatePost() {
                 <FXInput name="location" label="Location"></FXInput>
               </div>
               <div className="min-w-fit flex-1">
+                <FXInput name="id name" label="id name"></FXInput>
+              </div>
+              <div className="min-w-fit flex-1">
                 <FXInput label="city" name="City" />
               </div>
             </div>

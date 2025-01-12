@@ -1,6 +1,7 @@
 'use client';
 import FXDatePicker from '@/src/components/form/FXDatePicker';
 import FXInput from '@/src/components/form/FXInput';
+import dateToISO from '@/src/utils/dateToISO';
 import { Button } from '@nextui-org/button';
 import { Divider } from '@nextui-org/react';
 import { useFieldArray, useForm, FormProvider } from 'react-hook-form';
@@ -18,6 +19,7 @@ export default function CreatePost() {
     const postData = {
       ...data,
       questions: data.questions.map((que: { value: string }) => que.value),
+      dateFound:dateToISO(data.dateFound),
     };
     console.log(postData);
   };

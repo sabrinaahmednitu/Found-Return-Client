@@ -26,7 +26,7 @@ export default function CreatePost() {
   };
   return (
     <div>
-      <div className="h-full rounded-xl bg-gradient-to-b from-default-100 ppx-[73px] py-12">
+      <div className="h-full rounded-xl bg-gradient-to-b from-default-100 px-[73px] py-12">
         <h1 className="text-2xl font-semibold">Post a found item</h1>
         <Divider className="mb-5 mt-3" />
         {/* making form context using FormProvider */}
@@ -43,9 +43,6 @@ export default function CreatePost() {
             <div className="flex flex-wrap gap-2 py-2">
               <div className="min-w-fit flex-1">
                 <FXInput name="location" label="Location"></FXInput>
-              </div>
-              <div className="min-w-fit flex-1">
-                <FXInput name="id name" label="id name"></FXInput>
               </div>
               <div className="min-w-fit flex-1">
                 <FXInput label="city" name="City" />

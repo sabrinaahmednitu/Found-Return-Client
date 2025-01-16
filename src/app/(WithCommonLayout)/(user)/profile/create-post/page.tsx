@@ -61,7 +61,7 @@ export default function CreatePost() {
 
             <Divider className="my-5" />
             <div className="flex justify-between items-center">
-              <h1 className="text-xl">Owner verifications question</h1>
+              <h1 className="text-xl">Owner verifications questions</h1>
               <Button onClick={() => handleFieldAppend()}>Append</Button>
             </div>
             {fields.map((field, index) => (

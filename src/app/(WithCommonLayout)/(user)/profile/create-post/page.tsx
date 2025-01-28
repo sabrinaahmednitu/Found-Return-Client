@@ -1,11 +1,27 @@
 'use client';
 import FXDatePicker from '@/src/components/form/FXDatePicker';
 import FXInput from '@/src/components/form/FXInput';
+import FXSelect from '@/src/components/form/FXSelect';
 import dateToISO from '@/src/utils/dateToISO';
 import { Button } from '@nextui-org/button';
 import { Divider } from '@nextui-org/react';
 import { useFieldArray, useForm, FormProvider } from 'react-hook-form';
 import { SubmitHandler, FieldValues } from 'react-hook-form';
+
+const cityOptions = [
+  {
+    key: 'dhaka',
+    label: 'Dhaka',
+  },
+  {
+    key: 'khulna',
+    label: 'Khulna',
+  },
+  {
+    key: 'chittagong',
+    label: 'Chittagong',
+  },
+];
 
 export default function CreatePost() {
   const methods = useForm();
@@ -19,7 +35,7 @@ export default function CreatePost() {
     const postData = {
       ...data,
       questions: data.questions.map((que: { value: string }) => que.value),
-      dateFound:dateToISO(data.dateFound),
+      dateFound: dateToISO(data.dateFound),
     };
     console.log(postData);
   };
@@ -47,7 +63,7 @@ export default function CreatePost() {
                 <FXInput name="location" label="Location"></FXInput>
               </div>
               <div className="min-w-fit flex-1">
-                <FXInput label="city" name="City" />
+                <FXSelect label="City" name="city" options={cityOptions} />
               </div>
             </div>
             <div className="flex flex-wrap gap-2 py-2">

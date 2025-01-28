@@ -1,10 +1,25 @@
-import { Select, SelectItem } from "@nextui-org/react";
+'use client';
 
-export default function FXSelect() {
+import { IInput } from '@/src/types';
+import { Select, SelectItem } from '@nextui-org/select';
+import { useFormContext } from 'react-hook-form';
+
+interface IProps extends IInput {
+  options: {
+    key: string;
+    label: string;
+  }[];
+}
+
+export default function FXSelect({ options, name, label }: IProps) {
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext();
   return (
-    <Select className="max-w-xs" label="Select an animal">
-      {animals.map((animal) => (
-        <SelectItem key={animal.key}>{animal.label}</SelectItem>
+    <Select {...register(name)} className="max-w-xs" label={label}>
+      {options.map((option) => (
+        <SelectItem key={option.key}>{option.label}</SelectItem>
       ))}
     </Select>
   );

@@ -16,6 +16,7 @@ export default function FXSelect({ options, name, label }: IProps) {
     register,
     formState: { errors },
   } = useFormContext();
+  
   return (
     <Select {...register(name)} className="max-w-xs" label={label}>
       {options.map((option) => (

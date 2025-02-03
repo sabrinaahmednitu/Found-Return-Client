@@ -12,6 +12,7 @@
     "prettier:fix": "npx prettier --write src"
   },
   "dependencies": {
+    "@heroui/select": "^2.4.10",
     "@hookform/resolvers": "^3.9.1",
     "@nextui-org/avatar": "^2.0.33",
     "@nextui-org/button": "2.0.38",

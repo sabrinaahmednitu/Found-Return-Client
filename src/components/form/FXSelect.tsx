@@ -11,14 +11,19 @@ interface IProps extends IInput {
   }[];
 }
 
-export default function FXSelect({ options, name, label }: IProps) {
+export default function FXSelect({ options, name, label ,variant="bordered" }: IProps) {
   const {
     register,
     formState: { errors },
   } = useFormContext();
   
   return (
-    <Select {...register(name)} className="max-w-xs" label={label}>
+    <Select
+      {...register(name)}
+      className="min-w-full sm:min-w-[225px]"
+      label={label}
+      variant={variant}
+    >
       {options.map((option) => (
         <SelectItem key={option.key}>{option.label}</SelectItem>
       ))}

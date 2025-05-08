@@ -68,6 +68,14 @@ export default function CreatePost() {
             </div>
             <div className="flex flex-wrap gap-2 py-2">
               <div className="min-w-fit flex-1">
+                <FXInput name="location" label="Location"></FXInput>
+              </div>
+              <div className="min-w-fit flex-1">
+                <FXSelect label="City" name="city" options={cityOptions} />
+              </div>
+            </div>
+            <div className="flex flex-wrap gap-2 py-2">
+              <div className="min-w-fit flex-1">
                 <FXInput name="category" label="Category"></FXInput>
               </div>
               <div className="min-w-fit flex-1">

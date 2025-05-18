@@ -45,6 +45,16 @@ export default function Purpose() {
                 Use advanced filters to quickly find or post lost items.
               </p>
             </div>
+            {/* Card 2 */}
+            <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+              <FaSearch className="text-green-600 text-4xl mb-4 mx-auto" />
+              <h3 className="text-xl font-semibold text-gray-800">
+                Efficient Search
+              </h3>
+              <p className="text-gray-600 mt-2">
+                Use advanced filters to quickly find or post lost items.
+              </p>
+            </div>
 
             {/* Card 3 */}
             <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">

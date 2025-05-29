@@ -2,6 +2,7 @@
 import FXDatePicker from '@/src/components/form/FXDatePicker';
 import FXInput from '@/src/components/form/FXInput';
 import FXSelect from '@/src/components/form/FXSelect';
+import { useGetCategories } from '@/src/hooks/categories.hook';
 import dateToISO from '@/src/utils/dateToISO';
 import { Button } from '@nextui-org/button';
 import { Divider } from '@nextui-org/react';
@@ -24,6 +25,7 @@ const cityOptions = [
 ];
 
 export default function CreatePost() {
+  const { data: Categories } = useGetCategories();
   const methods = useForm();
   const { control, handleSubmit } = methods;
   const { fields, append, remove } = useFieldArray({

@@ -11,7 +11,12 @@ interface IProps extends IInput {
   }[];
 }
 
-export default function FXSelect({ options, name, label ,variant="bordered" }: IProps) {
+export default function FXSelect({ options,
+  name,
+  label,
+  variant = "bordered",
+  disabled
+}: IProps) {
   const {
     register,
     formState: { errors },
@@ -23,6 +28,7 @@ export default function FXSelect({ options, name, label ,variant="bordered" }: I
       className="min-w-full sm:min-w-[225px]"
       label={label}
       variant={variant}
+      disabled={disabled}
     >
       {options.map((option) => (
         <SelectItem key={option.key}>{option.label}</SelectItem>
